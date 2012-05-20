@@ -1,0 +1,31 @@
+#######################################
+# Syntax 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Nokia_lcd	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+cLCD_Init	KEYWORD2
+cLCD_GotoXY	KEYWORD2
+cLCD_Pixel	KEYWORD2
+cLCD_Line	KEYWORD2
+cLCD_Box	KEYWORD2
+cLCD_Circle	KEYWORD2
+cLCD_Bitmap KEYWORD2
+cLCD_Char	KEYWORD2
+cLCD_String	KEYWORD2
+cLCD_Bitmap_Datbuf_Start	KEYWORD2
+cLCD_Bitmap_Datbuf	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
