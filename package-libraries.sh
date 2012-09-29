@@ -2,7 +2,8 @@
 
 pack() {
 	VERSION=$(cat $1/version.txt)
-	zip -r ../build/$1-${VERSION//./_}.zip $1 --exclude \*.svn\*
+	rm -f ../build/$1-${VERSION}.zip
+	zip -r ../build/$1-${VERSION}.zip $1
 }
 
 libraries="\
