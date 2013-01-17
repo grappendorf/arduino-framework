@@ -46,17 +46,24 @@ please send me an email.
 
 ### Licenses
 
+ * APACHE2 Apache License Version 2.0
+  You find the license at http://www.apache.org/licenses/LICENSE-2.0
  * LGPL3 GNU LESSER GENERAL PUBLIC LICENSE Version 3
   You find the license at http://www.gnu.org/licenses/lgpl.html
  * GPL3 GNU General Public License Version 2 
   You find the license at http://www.gnu.org/licenses/gpl-3.0.html
  * GPL2 GNU General Public License Version 2 
   You find the license at http://www.gnu.org/licenses/gpl-2.0.html
+ * BSD3 The BSD 3-Clause License
+  You find the license at http://opensource.org/licenses/BSD-3-Clause
  * CUSTOM A custom open source/freeware license
   See the source code for the license text 
 
 ###  Libraries
 
+ * Android ADK
+  http://arduino.cc/en/Main/ArduinoBoardADK
+  Apache2
  * Bounce 
   http://www.arduino.cc/playground/Code/Bounce  
   LGPL3 
@@ -75,6 +82,9 @@ please send me an email.
  * LiquidCrystal (Arduino Core)
  * Matrix (Arduino Core pre 1.0) 
   http://www.wiring.org.co/reference/libraries/Matrix/index.html
+ * Midi
+  http://playground.arduino.cc/Main/MIDILibrary
+  GPL3
  * MsTimer2
   http://arduino.cc/playground/Main/MsTimer2
   LGPL
@@ -105,6 +115,9 @@ please send me an email.
  * TimerOne
   http://arduino.cc/playground/Code/Timer1
   GPL3
+ * u8glib
+  http://code.google.com/p/u8glib/
+  BSD3
  * UsbKeyboard
   http://code.google.com/p/vusb-for-arduino/
   GPL2/GPL3/Commercial
