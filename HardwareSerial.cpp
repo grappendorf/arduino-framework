@@ -88,24 +88,18 @@ inline void store_char(unsigned char c, ring_buffer *buffer)
 #if !defined(USART0_RX_vect) && defined(USART1_RX_vect)
 // do nothing - on the 32u4 the first USART is USART1
 #else
-#if !defined(USART_RX_vect) && !defined(SIG_USART0_RECV) && \
-    !defined(SIG_UART0_RECV) && !defined(USART0_RX_vect) && \
-	!defined(SIG_UART_RECV)
+#if !defined(USART_RX_vect) && !defined(USART0_RX_vect) && \
+    !defined(USART0_RX_vect) && !defined(USART0_RX_vect) && \
+	!defined(USART_RX_vect)
   #error "Don't know what the Data Received vector is called for the first UART"
 #else
   void serialEvent() __attribute__((weak));
   void serialEvent() {}
   #define serialEvent_implemented
-#if defined(USART_RX_vect)
-  SIGNAL(USART_RX_vect)
-#elif defined(SIG_USART0_RECV)
-  SIGNAL(SIG_USART0_RECV)
-#elif defined(SIG_UART0_RECV)
-  SIGNAL(SIG_UART0_RECV)
-#elif defined(USART0_RX_vect)
+#if defined(USART0_RX_vect)
   SIGNAL(USART0_RX_vect)
-#elif defined(SIG_UART_RECV)
-  SIGNAL(SIG_UART_RECV)
+#elif defined(USART_RX_vect)
+  SIGNAL(USART_RX_vect)
 #endif
   {
   #if defined(UDR0)
@@ -129,8 +123,6 @@ inline void store_char(unsigned char c, ring_buffer *buffer)
     unsigned char c = UDR1;
     store_char(c, &rx_buffer1);
   }
-#elif defined(SIG_USART1_RECV)
-  #error SIG_USART1_RECV
 #endif
 
 #if defined(USART2_RX_vect) && defined(UDR2)
@@ -142,8 +134,6 @@ inline void store_char(unsigned char c, ring_buffer *buffer)
     unsigned char c = UDR2;
     store_char(c, &rx_buffer2);
   }
-#elif defined(SIG_USART2_RECV)
-  #error SIG_USART2_RECV
 #endif
 
 #if defined(USART3_RX_vect) && defined(UDR3)
@@ -155,8 +145,6 @@ inline void store_char(unsigned char c, ring_buffer *buffer)
     unsigned char c = UDR3;
     store_char(c, &rx_buffer3);
   }
-#elif defined(SIG_USART3_RECV)
-  #error SIG_USART3_RECV
 #endif
 
 void serialEventRun(void)
