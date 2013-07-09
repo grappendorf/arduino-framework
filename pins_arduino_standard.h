@@ -26,6 +26,8 @@
 #define Pins_Arduino_h
 
 #include <avr/pgmspace.h>
+#undef PROGMEM
+#define PROGMEM __attribute((section(".progmem.data")))
 
 #define NUM_DIGITAL_PINS            20
 #define NUM_ANALOG_INPUTS           6
@@ -55,7 +57,7 @@ const static uint8_t A5 = 19;
 const static uint8_t A6 = 20;
 const static uint8_t A7 = 21;
 
-#define digitalPinToPCICR(p)    (((p) >= 0 && (p) <= 21) ? (&PCICR) : ((uint8_t *)0))
+#define digitalPinToPCICR(p)    (((p) >= 0 && (p) <= 21) ? ((uint8_t *) (&PCICR)) : ((uint8_t *)0))
 #define digitalPinToPCICRbit(p) (((p) <= 7) ? 2 : (((p) <= 13) ? 0 : 1))
 #define digitalPinToPCMSK(p)    (((p) <= 7) ? (&PCMSK2) : (((p) <= 13) ? (&PCMSK0) : (((p) <= 21) ? (&PCMSK1) : ((uint8_t *)0))))
 #define digitalPinToPCMSKbit(p) (((p) <= 7) ? (p) : (((p) <= 13) ? ((p) - 8) : ((p) - 14)))
@@ -69,12 +71,12 @@ const static uint8_t A7 = 21;
 // ATMEL ATMEGA8 & 168 / ARDUINO
 //
 //                  +-\/-+
-//            PC6  1|    |28  PC5 (AI 5)
-//      (D 0) PD0  2|    |27  PC4 (AI 4)
-//      (D 1) PD1  3|    |26  PC3 (AI 3)
-//      (D 2) PD2  4|    |25  PC2 (AI 2)
-// PWM+ (D 3) PD3  5|    |24  PC1 (AI 1)
-//      (D 4) PD4  6|    |23  PC0 (AI 0)
+//            PC6  1|    |28  PC5 (AI 5) (D 19)
+//      (D 0) PD0  2|    |27  PC4 (AI 4) (D 18)
+//      (D 1) PD1  3|    |26  PC3 (AI 3) (D 17)
+//      (D 2) PD2  4|    |25  PC2 (AI 2) (D 16)
+// PWM+ (D 3) PD3  5|    |24  PC1 (AI 1) (D 15)
+//      (D 4) PD4  6|    |23  PC0 (AI 0) (D 14)
 //            VCC  7|    |22  GND
 //            GND  8|    |21  AREF
 //            PB6  9|    |20  AVCC

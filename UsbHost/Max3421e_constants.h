@@ -20,7 +20,7 @@
   // TODO: Test with Mega + shield combination
   #define SS_PIN    53
 #endif
-#elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644__)
+#elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644P__)
   #define SCK_PIN   13
   #define MISO_PIN  12
   #define MOSI_PIN  11

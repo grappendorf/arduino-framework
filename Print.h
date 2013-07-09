@@ -20,6 +20,7 @@
 #ifndef Print_h
 #define Print_h
 
+#include <stddef.h>
 #include <inttypes.h>
 #include <stdio.h> // for size_t
 
@@ -45,7 +46,7 @@ class Print
     int getWriteError() { return write_error; }
     void clearWriteError() { setWriteError(0); }
   
-    virtual size_t write(uint8_t) = 0;
+    virtual size_t write(uint8_t);
     size_t write(const char *str) { return write((const uint8_t *)str, strlen(str)); }
     virtual size_t write(const uint8_t *buffer, size_t size);
     

@@ -34,12 +34,12 @@ static const dog_pgm_uint8_t dog_mask0_normal[8] = { 0x01, 0x03, 0x07, 0x0f, 0x1
 static const dog_pgm_uint8_t dog_mask7_normal[8] = { 0xff, 0xfe, 0xfc, 0xf8, 0xf0, 0xe0, 0xc0, 0x80 };
 //#endif
 
-const dog_pgm_uint8_t* dog_get_mask0()
+const uint8_t* dog_get_mask0()
 {
 	return dog_reverse ? dog_mask0_reverse : dog_mask0_normal;
 }
 
-const dog_pgm_uint8_t* dog_get_mask7()
+const uint8_t* dog_get_mask7()
 {
 	return dog_reverse ? dog_mask7_reverse : dog_mask7_normal;
 }

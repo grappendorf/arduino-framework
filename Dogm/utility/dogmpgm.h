@@ -50,8 +50,12 @@
 #if defined(__AVR__)
 #include <stdint.h>
 #include <avr/pgmspace.h>
-typedef uint8_t PROGMEM dog_pgm_uint8_t;
-typedef char PROGMEM dog_pgm_char_t;
+//#undef PROGMEM
+//#define PROGMEM __attribute((section(".progmem.data")))
+#define dog_pgm_uint8_t uint8_t PROGMEM
+#define dog_pgm_char_t char PROGMEM
+//typedef uint8_t PROGMEM dog_pgm_uint8_t;
+//typedef char PROGMEM dog_pgm_char_t;
 #define dog_pgm_read(adr) pgm_read_byte_near(adr)
 #define DOG_ATTR_FN_INLINE __attribute__ ((noinline))
 #define DOG_PROGMEM PROGMEM
@@ -93,8 +97,10 @@ typedef char dog_pgm_char_t;
 /*========================================================
   All Systems
 */
-#define DOG_PGM_P const dog_pgm_uint8_t *
-#define DOG_PSTR_P const dog_pgm_char_t *
+//#define DOG_PGM_P const dog_pgm_uint8_t *
+//#define DOG_PSTR_P const dog_pgm_char_t *
+#define DOG_PGM_P const uint8_t *
+#define DOG_PSTR_P const char *
 
 #endif /* _DOGMPGM_H */
 

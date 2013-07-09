@@ -13,7 +13,9 @@
 #define YELLOW   0xFF0
 #define GRAY		 0x222
 #define LIGHTBLUE 0xADE
+#ifndef PINK
 #define PINK   0xF6A
+#endif
 
 /* 8x8 font */
 #define FONT_HEIGHT 8

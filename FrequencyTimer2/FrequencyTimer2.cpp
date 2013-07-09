@@ -31,7 +31,7 @@
 void (*FrequencyTimer2::onOverflow)() = 0;
 uint8_t FrequencyTimer2::enabled = 0;
 
-#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284P__)
+#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
 SIGNAL(TIMER2_COMPA_vect)
 #else
 SIGNAL(SIG_OUTPUT_COMPARE2)
@@ -49,7 +49,7 @@ SIGNAL(SIG_OUTPUT_COMPARE2)
 void FrequencyTimer2::setOnOverflow( void (*func)() )
 {
     FrequencyTimer2::onOverflow = func;
-#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284P__)
+#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega1284P__)
     if ( func) TIMSK2 |= _BV(OCIE2A);
     else TIMSK2 &= ~_BV(OCIE2A);
 #elif defined(__AVR_ATmega2560__)
@@ -95,7 +95,7 @@ void FrequencyTimer2::setPeriod(unsigned long period)
 	top = 255;
     }
 
-#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
+#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
     TCCR2B = 0;
     TCCR2A = 0;
     TCNT2 = 0;
@@ -114,7 +114,7 @@ void FrequencyTimer2::setPeriod(unsigned long period)
 
 unsigned long  FrequencyTimer2::getPeriod()
 {
-#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
+#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
     uint8_t p = (TCCR2B & 7);
     unsigned long v = OCR2A;
 #else
@@ -152,7 +152,7 @@ unsigned long  FrequencyTimer2::getPeriod()
 void FrequencyTimer2::enable()
 {
     FrequencyTimer2::enabled = 1;
-#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
+#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
     TCCR2A |= _BV(COM2A0);
 #else
     TCCR2 |= _BV(COM20);
@@ -162,7 +162,7 @@ void FrequencyTimer2::enable()
 void FrequencyTimer2::disable()
 {
     FrequencyTimer2::enabled = 0;
-#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
+#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega328P__) || defined(__AVR_ATmega644P__) || defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega2560__)
     TCCR2A &= ~_BV(COM2A0);
 #else
     TCCR2 &= ~_BV(COM20);

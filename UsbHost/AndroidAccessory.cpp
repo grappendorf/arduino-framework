@@ -131,7 +131,7 @@ bool AndroidAccessory::findEndpoints(byte addr, EP_RECORD *inEp, EP_RECORD *outE
 
 
     len = descBuff[2] | ((int)descBuff[3] << 8);
-    if (len > sizeof(descBuff)) {
+    if (len > (int) sizeof(descBuff)) {
         Serial.print(F("config descriptor too large\n"));
             /* might want to truncate here */
         return false;

@@ -26,6 +26,8 @@
 #define Pins_Arduino_h
 
 #include <avr/pgmspace.h>
+#undef PROGMEM
+#define PROGMEM __attribute((section(".progmem.data")))
 
 #define NUM_DIGITAL_PINS            70
 #define NUM_ANALOG_INPUTS           16
