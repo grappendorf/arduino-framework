@@ -94,7 +94,7 @@ please send me an email.
  * OneWire
   http://www.pjrc.com/teensy/td_libs_OneWire.html
   CUSTOM
- * PID Library
+ * PID Library / PID Autotune Library
   http://playground.arduino.cc/Code/PIDLibrary
   GPL3
  * PinChangeInt
