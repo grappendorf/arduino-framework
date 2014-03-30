@@ -67,6 +67,9 @@ please send me an email.
  * Bounce 
   http://www.arduino.cc/playground/Code/Bounce  
   LGPL3 
+ * CmdMessenger
+  http://playground.arduino.cc//Code/CmdMessenger
+   
  * DallasTemperature 
   http://milesburton.com/Dallas_Temperature_Control_Library   
   GPL2 
