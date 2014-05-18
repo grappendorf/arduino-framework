@@ -20,14 +20,15 @@
 #ifndef XBee_h
 #define XBee_h
 
-#if ARDUINO >= 100
-#include "Arduino.h"
+#if defined(ARDUINO) && ARDUINO >= 100
+	#include "Arduino.h"
 #else
-#include "WProgram.h"
+	#include "WProgram.h"
 #endif
+
 #include <inttypes.h>
 
-//#define SERIES_1
+#define SERIES_1
 #define SERIES_2
 
 // set to ATAP value of XBee. AP=2 is recommended
@@ -102,6 +103,7 @@
 #define AT_COMMAND_RESPONSE 0x88
 #define REMOTE_AT_COMMAND_RESPONSE 0x97
 
+
 /**
  * TX STATUS constants
  */
@@ -146,9 +148,8 @@
  * create an instance of a subclass
  * It is recommend to reuse subclasses to conserve memory
  */
-class XBeeResponse
-{
-	public:
+class XBeeResponse {
+public:
 	//static const int MODEM_STATUS = 0x8a;
 	/**
 	 * Default constructor
@@ -270,10 +271,10 @@ class XBeeResponse
 	 */
 	uint8_t getErrorCode();
 	void setErrorCode(uint8_t errorCode);
-	protected:
+protected:
 	// pointer to frameData
 	uint8_t* _frameDataPtr;
-	private:
+private:
 	void setCommon(XBeeResponse &target);
 	uint8_t _apiId;
 	uint8_t _msbLength;
@@ -284,25 +285,25 @@ class XBeeResponse
 	uint8_t _errorCode;
 };
 
-class XBeeAddress
-{
-	public:
+class XBeeAddress {
+public:
 	XBeeAddress();
 };
 
 /**
  * Represents a 64-bit XBee Address
  */
-class XBeeAddress64 : public XBeeAddress
-{
-	public:
+class XBeeAddress64 : public XBeeAddress {
+public:
 	XBeeAddress64(uint32_t msb, uint32_t lsb);
 	XBeeAddress64();
 	uint32_t getMsb();
 	uint32_t getLsb();
 	void setMsb(uint32_t msb);
 	void setLsb(uint32_t lsb);
-	private:
+	//bool operator==(XBeeAddress64 addr);
+	//bool operator!=(XBeeAddress64 addr);
+private:
 	uint32_t _msb;
 	uint32_t _lsb;
 };
@@ -320,23 +321,20 @@ class XBeeAddress64 : public XBeeAddress
 /**
  * This class is extended by all Responses that include a frame id
  */
-class FrameIdResponse : public XBeeResponse
-{
-	public:
+class FrameIdResponse : public XBeeResponse {
+public:
 	FrameIdResponse();
 	uint8_t getFrameId();
-	private:
+private:
 	uint8_t _frameId;
 };
 
 /**
  * Common functionality for both Series 1 and 2 data RX data packets
  */
-class RxDataResponse : public XBeeResponse
-{
-	public:
+class RxDataResponse : public XBeeResponse {
+public:
 	RxDataResponse();
-	virtual ~RxDataResponse();
 	/**
 	 * Returns the specified index of the payload.  The index may be 0 to getDataLength() - 1
 	 * This method is deprecated; use uint8_t* getData()
@@ -364,23 +362,21 @@ class RxDataResponse : public XBeeResponse
 /**
  * Represents a Series 2 TX status packet
  */
-class ZBTxStatusResponse : public FrameIdResponse
-{
+class ZBTxStatusResponse : public FrameIdResponse {
 	public:
-	ZBTxStatusResponse();
-	uint16_t getRemoteAddress();
-	uint8_t getTxRetryCount();
-	uint8_t getDeliveryStatus();
-	uint8_t getDiscoveryStatus();
-	bool isSuccess();
+		ZBTxStatusResponse();
+		uint16_t getRemoteAddress();
+		uint8_t getTxRetryCount();
+		uint8_t getDeliveryStatus();
+		uint8_t getDiscoveryStatus();
+		bool isSuccess();
 };
 
 /**
  * Represents a Series 2 RX packet
  */
-class ZBRxResponse : public RxDataResponse
-{
-	public:
+class ZBRxResponse : public RxDataResponse {
+public:
 	ZBRxResponse();
 	XBeeAddress64& getRemoteAddress64();
 	uint16_t getRemoteAddress16();
@@ -388,16 +384,15 @@ class ZBRxResponse : public RxDataResponse
 	uint8_t getDataLength();
 	// frame position where data starts
 	uint8_t getDataOffset();
-	private:
+private:
 	XBeeAddress64 _remoteAddress64;
 };
 
 /**
  * Represents a Series 2 RX I/O Sample packet
  */
-class ZBRxIoSampleResponse : public ZBRxResponse
-{
-	public:
+class ZBRxIoSampleResponse : public ZBRxResponse {
+public:
 	ZBRxIoSampleResponse();
 	bool containsAnalog();
 	bool containsDigital();
@@ -430,20 +425,18 @@ class ZBRxIoSampleResponse : public ZBRxResponse
 /**
  * Represents a Series 1 TX Status packet
  */
-class TxStatusResponse : public FrameIdResponse
-{
+class TxStatusResponse : public FrameIdResponse {
 	public:
-	TxStatusResponse();
-	uint8_t getStatus();
-	bool isSuccess();
+		TxStatusResponse();
+		uint8_t getStatus();
+		bool isSuccess();
 };
 
 /**
  * Represents a Series 1 RX packet
  */
-class RxResponse : public RxDataResponse
-{
-	public:
+class RxResponse : public RxDataResponse {
+public:
 	RxResponse();
 	// remember rssi is negative but this is unsigned byte so it's up to you to convert
 	uint8_t getRssi();
@@ -458,80 +451,75 @@ class RxResponse : public RxDataResponse
 /**
  * Represents a Series 1 16-bit address RX packet
  */
-class Rx16Response : public RxResponse
-{
-	public:
+class Rx16Response : public RxResponse {
+public:
 	Rx16Response();
 	uint8_t getRssiOffset();
 	uint16_t getRemoteAddress16();
-	protected:
+protected:
 	uint16_t _remoteAddress;
 };
 
 /**
  * Represents a Series 1 64-bit address RX packet
  */
-class Rx64Response : public RxResponse
-{
-	public:
+class Rx64Response : public RxResponse {
+public:
 	Rx64Response();
 	uint8_t getRssiOffset();
 	XBeeAddress64& getRemoteAddress64();
-	private:
+private:
 	XBeeAddress64 _remoteAddress;
 };
 
 /**
  * Represents a Series 1 RX I/O Sample packet
  */
-class RxIoSampleBaseResponse : public RxResponse
-{
+class RxIoSampleBaseResponse : public RxResponse {
 	public:
-	RxIoSampleBaseResponse();
-	/**
-	 * Returns the number of samples in this packet
-	 */
-	uint8_t getSampleSize();
-	bool containsAnalog();
-	bool containsDigital();
-	/**
-	 * Returns true if the specified analog pin is enabled
-	 */
-	bool isAnalogEnabled(uint8_t pin);
-	/**
-	 * Returns true if the specified digital pin is enabled
-	 */
-	bool isDigitalEnabled(uint8_t pin);
-	/**
-	 * Returns the 10-bit analog reading of the specified pin.
-	 * Valid pins include ADC:0-5.  Sample index starts at 0
-	 */
-	uint16_t getAnalog(uint8_t pin, uint8_t sample);
-	/**
-	 * Returns true if the specified pin is high/on.
-	 * Valid pins include DIO:0-8.  Sample index starts at 0
-	 */
-	bool isDigitalOn(uint8_t pin, uint8_t sample);
-	uint8_t getSampleOffset();
+		RxIoSampleBaseResponse();
+		/**
+		 * Returns the number of samples in this packet
+		 */
+		uint8_t getSampleSize();
+		bool containsAnalog();
+		bool containsDigital();
+		/**
+		 * Returns true if the specified analog pin is enabled
+		 */
+		bool isAnalogEnabled(uint8_t pin);
+		/**
+		 * Returns true if the specified digital pin is enabled
+		 */
+		bool isDigitalEnabled(uint8_t pin);
+		/**
+		 * Returns the 10-bit analog reading of the specified pin.
+		 * Valid pins include ADC:0-5.  Sample index starts at 0
+		 */
+		uint16_t getAnalog(uint8_t pin, uint8_t sample);
+		/**
+		 * Returns true if the specified pin is high/on.
+		 * Valid pins include DIO:0-8.  Sample index starts at 0
+		 */
+		bool isDigitalOn(uint8_t pin, uint8_t sample);
+		uint8_t getSampleOffset();
 	private:
 };
 
-class Rx16IoSampleResponse : public RxIoSampleBaseResponse
-{
-	public:
+class Rx16IoSampleResponse : public RxIoSampleBaseResponse {
+public:
 	Rx16IoSampleResponse();
 	uint16_t getRemoteAddress16();
 	uint8_t getRssiOffset();
 
 };
 
-class Rx64IoSampleResponse : public RxIoSampleBaseResponse
-{
-	public:
+class Rx64IoSampleResponse : public RxIoSampleBaseResponse {
+public:
 	Rx64IoSampleResponse();
 	XBeeAddress64& getRemoteAddress64();
 	uint8_t getRssiOffset();
-	private:
+private:
 	XBeeAddress64 _remoteAddress;
 };
 
@@ -540,9 +528,8 @@ class Rx64IoSampleResponse : public RxIoSampleBaseResponse
 /**
  * Represents a Modem Status RX packet
  */
-class ModemStatusResponse : public XBeeResponse
-{
-	public:
+class ModemStatusResponse : public XBeeResponse {
+public:
 	ModemStatusResponse();
 	uint8_t getStatus();
 };
@@ -550,74 +537,73 @@ class ModemStatusResponse : public XBeeResponse
 /**
  * Represents an AT Command RX packet
  */
-class AtCommandResponse : public FrameIdResponse
-{
+class AtCommandResponse : public FrameIdResponse {
 	public:
-	AtCommandResponse();
-	/**
-	 * Returns an array containing the two character command
-	 */
-	uint8_t* getCommand();
-	/**
-	 * Returns the command status code.
-	 * Zero represents a successful command
-	 */
-	uint8_t getStatus();
-	/**
-	 * Returns an array containing the command value.
-	 * This is only applicable to query commands.
-	 */
-	uint8_t* getValue();
-	/**
-	 * Returns the length of the command value array.
-	 */
-	uint8_t getValueLength();
-	/**
-	 * Returns true if status equals AT_OK
-	 */
-	bool isOk();
+		AtCommandResponse();
+		/**
+		 * Returns an array containing the two character command
+		 */
+		uint8_t* getCommand();
+		/**
+		 * Returns the command status code.
+		 * Zero represents a successful command
+		 */
+		uint8_t getStatus();
+		/**
+		 * Returns an array containing the command value.
+		 * This is only applicable to query commands.
+		 */
+		uint8_t* getValue();
+		/**
+		 * Returns the length of the command value array.
+		 */
+		uint8_t getValueLength();
+		/**
+		 * Returns true if status equals AT_OK
+		 */
+		bool isOk();
 };
 
 /**
  * Represents a Remote AT Command RX packet
  */
-class RemoteAtCommandResponse : public AtCommandResponse
-{
+class RemoteAtCommandResponse : public AtCommandResponse {
 	public:
-	RemoteAtCommandResponse();
-	/**
-	 * Returns an array containing the two character command
-	 */
-	uint8_t* getCommand();
-	/**
-	 * Returns the command status code.
-	 * Zero represents a successful command
-	 */
-	uint8_t getStatus();
-	/**
-	 * Returns an array containing the command value.
-	 * This is only applicable to query commands.
-	 */
-	uint8_t* getValue();
-	/**
-	 * Returns the length of the command value array.
-	 */
-	uint8_t getValueLength();
-	/**
-	 * Returns the 16-bit address of the remote radio
-	 */
-	uint16_t getRemoteAddress16();
-	/**
-	 * Returns the 64-bit address of the remote radio
-	 */
-	XBeeAddress64& getRemoteAddress64();
-	/**
-	 * Returns true if command was successful
-	 */
-	bool isOk();
+		RemoteAtCommandResponse();
+		/**
+		 * Returns an array containing the two character command
+		 */
+		uint8_t* getCommand();
+		/**
+		 * Returns the command status code.
+		 * Zero represents a successful command
+		 */
+		uint8_t getStatus();
+		/**
+		 * Returns an array containing the command value.
+		 * This is only applicable to query commands.
+		 */
+		uint8_t* getValue();
+		/**
+		 * Returns the length of the command value array.
+		 */
+		uint8_t getValueLength();
+		/**
+		 * Returns the 16-bit address of the remote radio
+		 */
+		uint16_t getRemoteAddress16();
+		/**
+		 * Returns the 64-bit address of the remote radio
+		 */
+		XBeeAddress64& getRemoteAddress64();
+		/**
+		 * Returns true if command was successful
+		 */
+		bool isOk();
 	private:
-	XBeeAddress64 _remoteAddress64;
+		XBeeAddress64 _remoteAddress64;
 };
+
 
 /**
  * Super class of all XBee requests (TX packets)
@@ -626,17 +612,13 @@ class RemoteAtCommandResponse : public AtCommandResponse
  * <p/>
  * This class allocates a buffer to
  */
-class XBeeRequest
-{
-	public:
+class XBeeRequest {
+public:
 	/**
 	 * Constructor
 	 * TODO make protected
 	 */
 	XBeeRequest(uint8_t apiId, uint8_t frameId);
-
-	virtual ~XBeeRequest();
-
 	/**
 	 * Sets the frame id.  Must be between 1 and 255 inclusive to get a TX status response.
 	 */
@@ -662,9 +644,9 @@ class XBeeRequest
 	 */
 	virtual uint8_t getFrameDataLength() = 0;
 	//void reset();
-	protected:
+protected:
 	void setApiId(uint8_t apiId);
-	private:
+private:
 	uint8_t _apiId;
 	uint8_t _frameId;
 };
@@ -691,12 +673,9 @@ class XBeeRequest
  *
  * \author Andrew Rapp
  */
-class XBee
-{
-	public:
+class XBee {
+public:
 	XBee();
-	// for eclipse dev only
-	void setSerial(HardwareSerial serial);
 	/**
 	 * Reads all available serial bytes until a packet is parsed, an error occurs, or the buffer is empty.
 	 * You may call <i>xbee</i>.getResponse().isAvailable() after calling this method to determine if
@@ -722,9 +701,9 @@ class XBee
 	 */
 	void readPacketUntilAvailable();
 	/**
-	 * Starts the serial connection at the supplied baud rate
+	 * Starts the serial connection on the specified serial port
 	 */
-	void begin(long baud);
+	void begin(Stream &serial);
 	void getResponse(XBeeResponse &response);
 	/**
 	 * Returns a reference to the current response
@@ -740,7 +719,15 @@ class XBee
 	 * Returns a sequential frame id between 1 and 255
 	 */
 	uint8_t getNextFrameId();
-	private:
+	/**
+	 * Specify the serial port.  Only relevant for Arduinos that support multiple serial ports (e.g. Mega)
+	 */
+	void setSerial(Stream &serial);
+private:
+	bool available();
+	uint8_t read();
+	void flush();
+	void write(uint8_t val);
 	void sendByte(uint8_t b, bool escape);
 	void resetResponse();
 	XBeeResponse _response;
@@ -753,14 +740,14 @@ class XBee
 	uint8_t _nextFrameId;
 	// buffer for incoming RX packets.  holds only the api specific frame data, starting after the api id byte and prior to checksum
 	uint8_t _responseFrameData[MAX_FRAME_DATA_SIZE];
+	Stream* _serial;
 };
 
 /**
  * All TX packets that support payloads extend this class
  */
-class PayloadRequest : public XBeeRequest
-{
-	public:
+class PayloadRequest : public XBeeRequest {
+public:
 	PayloadRequest(uint8_t apiId, uint8_t frameId, uint8_t *payload, uint8_t payloadLength);
 	/**
 	 * Returns the payload of the packet, if not null
@@ -780,7 +767,7 @@ class PayloadRequest : public XBeeRequest
 	 * Length must be <= to the array length.
 	 */
 	void setPayloadLength(uint8_t payloadLength);
-	private:
+private:
 	uint8_t* _payloadPtr;
 	uint8_t _payloadLength;
 };
@@ -795,9 +782,8 @@ class PayloadRequest : public XBeeRequest
  * if the packet is too large, other than you will not get a TX Status response.
  * The datasheet says 100 bytes is the maximum, although that could change in future firmware.
  */
-class Tx16Request : public PayloadRequest
-{
-	public:
+class Tx16Request : public PayloadRequest {
+public:
 	Tx16Request(uint16_t addr16, uint8_t option, uint8_t *payload, uint8_t payloadLength, uint8_t frameId);
 	/**
 	 * Creates a Unicast Tx16Request with the ACK option and DEFAULT_FRAME_ID
@@ -814,8 +800,8 @@ class Tx16Request : public PayloadRequest
 	void setOption(uint8_t option);
 	uint8_t getFrameData(uint8_t pos);
 	uint8_t getFrameDataLength();
-	protected:
-	private:
+protected:
+private:
 	uint16_t _addr16;
 	uint8_t _option;
 };
@@ -828,9 +814,8 @@ class Tx16Request : public PayloadRequest
  * if the packet is too large, other than you will not get a TX Status response.
  * The datasheet says 100 bytes is the maximum, although that could change in future firmware.
  */
-class Tx64Request : public PayloadRequest
-{
-	public:
+class Tx64Request : public PayloadRequest {
+public:
 	Tx64Request(XBeeAddress64 &addr64, uint8_t option, uint8_t *payload, uint8_t payloadLength, uint8_t frameId);
 	/**
 	 * Creates a unicast Tx64Request with the ACK option and DEFAULT_FRAME_ID
@@ -848,12 +833,13 @@ class Tx64Request : public PayloadRequest
 	void setOption(uint8_t option);
 	uint8_t getFrameData(uint8_t pos);
 	uint8_t getFrameDataLength();
-	private:
+private:
 	XBeeAddress64 _addr64;
 	uint8_t _option;
 };
 
 #endif
+
 
 #ifdef SERIES_2
 
@@ -869,15 +855,13 @@ class Tx64Request : public PayloadRequest
  * ZB Pro firmware provides a PAYLOAD_TOO_LARGE that is returned if payload size
  * exceeds the maximum.
  */
-class ZBTxRequest : public PayloadRequest
-{
-	public:
+class ZBTxRequest : public PayloadRequest {
+public:
 	/**
 	 * Creates a unicast ZBTxRequest with the ACK option and DEFAULT_FRAME_ID
 	 */
 	ZBTxRequest(XBeeAddress64 &addr64, uint8_t *payload, uint8_t payloadLength);
-	ZBTxRequest(XBeeAddress64 &addr64, uint16_t addr16, uint8_t broadcastRadius, uint8_t option, uint8_t *payload,
-			uint8_t payloadLength, uint8_t frameId);
+	ZBTxRequest(XBeeAddress64 &addr64, uint16_t addr16, uint8_t broadcastRadius, uint8_t option, uint8_t *payload, uint8_t payloadLength, uint8_t frameId);
 	/**
 	 * Creates a default instance of this class.  At a minimum you must specify
 	 * a payload, payload length and a destination address before sending this request.
@@ -891,11 +875,11 @@ class ZBTxRequest : public PayloadRequest
 	void setAddress16(uint16_t addr16);
 	void setBroadcastRadius(uint8_t broadcastRadius);
 	void setOption(uint8_t option);
-	protected:
+protected:
 	// declare virtual functions
 	uint8_t getFrameData(uint8_t pos);
 	uint8_t getFrameDataLength();
-	private:
+private:
 	XBeeAddress64 _addr64;
 	uint16_t _addr16;
 	uint8_t _broadcastRadius;
@@ -908,9 +892,8 @@ class ZBTxRequest : public PayloadRequest
  * Represents an AT Command TX packet
  * The command is used to configure the serially connected XBee radio
  */
-class AtCommandRequest : public XBeeRequest
-{
-	public:
+class AtCommandRequest : public XBeeRequest {
+public:
 	AtCommandRequest();
 	AtCommandRequest(uint8_t *command);
 	AtCommandRequest(uint8_t *command, uint8_t *commandValue, uint8_t commandValueLength);
@@ -927,7 +910,7 @@ class AtCommandRequest : public XBeeRequest
 	 */
 	void clearCommandValue();
 	//void reset();
-	private:
+private:
 	uint8_t *_command;
 	uint8_t *_commandValue;
 	uint8_t _commandValueLength;
@@ -937,16 +920,14 @@ class AtCommandRequest : public XBeeRequest
  * Represents an Remote AT Command TX packet
  * The command is used to configure a remote XBee radio
  */
-class RemoteAtCommandRequest : public AtCommandRequest
-{
-	public:
+class RemoteAtCommandRequest : public AtCommandRequest {
+public:
 	RemoteAtCommandRequest();
 	/**
 	 * Creates a RemoteAtCommandRequest with 16-bit address to set a command.
 	 * 64-bit address defaults to broadcast and applyChanges is true.
 	 */
-	RemoteAtCommandRequest(uint16_t remoteAddress16, uint8_t *command, uint8_t *commandValue,
-			uint8_t commandValueLength);
+	RemoteAtCommandRequest(uint16_t remoteAddress16, uint8_t *command, uint8_t *commandValue, uint8_t commandValueLength);
 	/**
 	 * Creates a RemoteAtCommandRequest with 16-bit address to query a command.
 	 * 64-bit address defaults to broadcast and applyChanges is true.
@@ -956,8 +937,7 @@ class RemoteAtCommandRequest : public AtCommandRequest
 	 * Creates a RemoteAtCommandRequest with 64-bit address to set a command.
 	 * 16-bit address defaults to broadcast and applyChanges is true.
 	 */
-	RemoteAtCommandRequest(XBeeAddress64 &remoteAddress64, uint8_t *command, uint8_t *commandValue,
-			uint8_t commandValueLength);
+	RemoteAtCommandRequest(XBeeAddress64 &remoteAddress64, uint8_t *command, uint8_t *commandValue, uint8_t commandValueLength);
 	/**
 	 * Creates a RemoteAtCommandRequest with 16-bit address to query a command.
 	 * 16-bit address defaults to broadcast and applyChanges is true.
@@ -973,10 +953,12 @@ class RemoteAtCommandRequest : public AtCommandRequest
 	uint8_t getFrameDataLength();
 	static XBeeAddress64 broadcastAddress64;
 //	static uint16_t broadcast16Address;
-	private:
+private:
 	XBeeAddress64 _remoteAddress64;
 	uint16_t _remoteAddress16;
 	bool _applyChanges;
 };
+
+
 
 #endif //XBee_h

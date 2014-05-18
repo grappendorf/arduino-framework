@@ -74,8 +74,8 @@ class HardwareSerial : public Stream
 #endif
 #if defined(UBRR3H)
   extern HardwareSerial Serial3;
-#else
-  extern HardwareSerial Serial;
+//#else
+//  extern HardwareSerial Serial;
 #endif
 
 extern void serialEventRun(void) __attribute__((weak));
