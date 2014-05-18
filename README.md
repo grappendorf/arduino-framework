@@ -68,8 +68,7 @@ please send me an email.
   http://www.arduino.cc/playground/Code/Bounce  
   LGPL3 
  * CmdMessenger
-  http://playground.arduino.cc//Code/CmdMessenger
-   
+  http://playground.arduino.cc//Code/CmdMessenger  
  * DallasTemperature 
   http://milesburton.com/Dallas_Temperature_Control_Library   
   GPL2 
@@ -106,6 +105,9 @@ please send me an email.
  * ps2dev
   http://arduino.cc/playground/ComponentLib/Ps2mouse
   License unknown, assuming LGPL?
+ * RealSIDShield
+  https://github.com/atbrask/RealSIDShield
+  CUSTOM
  * RotaryEncoder
   http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1205879808
   License unknown, assuming LGPL?
