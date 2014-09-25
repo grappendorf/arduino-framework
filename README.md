@@ -82,6 +82,9 @@ please send me an email.
   http://arduino.cc/playground/Code/FrequencyTimer2
   LGPL 
  * LiquidCrystal (Arduino Core)
+ * LiquidCrystal440
+  https://code.google.com/p/liquidcrystal440/
+  GPL3
  * Matrix (Arduino Core pre 1.0) 
   http://www.wiring.org.co/reference/libraries/Matrix/index.html
  * Midi
