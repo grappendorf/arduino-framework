@@ -2,8 +2,8 @@
 
 pack() {
 	VERSION=$(cat $1/version.txt)
-	rm -f ../build/$1-${VERSION}.zip
-	zip -r ../build/$1-${VERSION}.zip $1
+	rm -f ../package-build/$1-${VERSION}.zip
+	zip -r ../package-build/$1-${VERSION}.zip $1
 }
 
 libraries="\
@@ -14,7 +14,7 @@ libraries="\
 	XXBee"
 
 mkdir -p tmp
-mkdir -p build
+mkdir -p package-build
 for l in $libraries
 do
 	cp -a $l tmp
