@@ -83,6 +83,9 @@ public:
   void command(uint8_t);
   
   using Print::write;
+protected:
+  ~LiquidCrystal() {};
+
 private:
   void send(uint8_t, uint8_t);
   void write4bits(uint8_t);
