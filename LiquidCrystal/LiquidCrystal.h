@@ -83,7 +83,6 @@ public:
   void command(uint8_t);
   
   using Print::write;
-protected:
   ~LiquidCrystal() {};
 
 private:
