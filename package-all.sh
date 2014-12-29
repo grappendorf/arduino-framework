@@ -1,7 +1,7 @@
 #!/bin/bash
-DIR=arduino-eclipse
+DIR=arduino-framework
 mkdir -p package-build
 cd ..
-rm -f $DIR/package-build/arduino-eclipse-1.0.0-r4.zip
-zip -r $DIR/package-build/arduino-eclipse-1.0.0-r4.zip $DIR -x $DIR/\*.git\* -x $DIR/\*_\* -x $DIR/target
+rm -f $DIR/package-build/arduino-framework-1.0.0-r4.zip
+zip -r $DIR/package-build/arduino-framework-1.0.0-r4.zip $DIR -x $DIR/\*.git\* -x $DIR/\*_\* -x $DIR/target
 cd $DIR

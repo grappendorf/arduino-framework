@@ -32,7 +32,7 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.1428181956" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.192864388" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.1312333526" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.1303913520" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -49,7 +49,7 @@
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.release.588157363" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.release">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.935519242" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.709543537" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.1284722065" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -57,7 +57,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.687430613" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.1098778984" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.839195371" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.1776473037" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -113,7 +113,7 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.2058479551" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.2074887084" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.5493949" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.1181494623" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -130,7 +130,7 @@
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.release.1250275598" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.release">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.1815658027" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.1548419087" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.262805680" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -144,7 +144,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.914570930" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.801129599" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.1419317024" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.399551058" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -194,7 +194,7 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.1712296584" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.1166768643" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.1144160642" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.2145121197" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -211,7 +211,7 @@
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.release.2051773566" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.release">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.128724237" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.1878673898" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.434357846" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -225,7 +225,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.664893370" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.1516545399" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.1388127954" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.1140137768" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -275,7 +275,7 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.2055982393" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.1694950992" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.765701378" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.1972246190" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -292,7 +292,7 @@
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.release.1175012388" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.release">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.1712067225" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.1924806422" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.999481425" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -306,7 +306,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.691925147" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.1193997385" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.1306357523" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.942995487" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -356,7 +356,7 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.1728205553" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.281811771" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.1632931968" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.1904053070" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -373,7 +373,7 @@
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.release.1901042825" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.release">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.866724170" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.232921807" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.406546248" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -381,7 +381,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.75799510" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.364925807" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.1359623428" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.1451029667" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -437,7 +437,7 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.1553758576" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.1367350260" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.331604494" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.1675503105" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -454,7 +454,7 @@
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.release.1408748539" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.release">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.2071878226" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.1229660466" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.814775969" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -462,7 +462,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.648051157" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.1941026225" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.1542699792" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.996996559" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -518,7 +518,7 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.1542940529" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.601902907" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.572604690" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.2034216101" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -535,7 +535,7 @@
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.release.598795530" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.release">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.1881617923" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level" value="de.innot.avreclipse.assembler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.asm.option.include.paths.714733574" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.1797788086" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
@@ -543,7 +543,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.debug.level.664643984" name="Generate Debugging Info" superClass="de.innot.avreclipse.cppcompiler.option.debug.level" value="de.innot.avreclipse.cppcompiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.380449552" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.874189696" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-eclipse}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/arduino-framework}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.564364481" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="ARDUINO=100"/>
@@ -574,19 +574,19 @@
 	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="atmega2560_16000000">
-			<resource resourceType="PROJECT" workspacePath="/arduino-eclipse"/>
+			<resource resourceType="PROJECT" workspacePath="/arduino-framework"/>
 		</configuration>
 		<configuration configurationName="atmega168_16000000">
-			<resource resourceType="PROJECT" workspacePath="/arduino-eclipse"/>
+			<resource resourceType="PROJECT" workspacePath="/arduino-framework"/>
 		</configuration>
 		<configuration configurationName="atmega1284p_16000000">
-			<resource resourceType="PROJECT" workspacePath="/arduino-eclipse"/>
+			<resource resourceType="PROJECT" workspacePath="/arduino-framework"/>
 		</configuration>
 		<configuration configurationName="atmega644_16000000">
-			<resource resourceType="PROJECT" workspacePath="/arduino-eclipse"/>
+			<resource resourceType="PROJECT" workspacePath="/arduino-framework"/>
 		</configuration>
 		<configuration configurationName="atmega328p_16000000">
-			<resource resourceType="PROJECT" workspacePath="/arduino-eclipse"/>
+			<resource resourceType="PROJECT" workspacePath="/arduino-framework"/>
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>

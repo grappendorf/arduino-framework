@@ -1,7 +1,7 @@
-Arduino Eclipse
-===============
+Arduino Framework
+=================
 
-This is an Eclipse C/C++ project containing the core Arduino code, a selection of third party
+This is a project containing the core Arduino code, a selection of third party
 Arduino libraries and my own Arduino libraries.
 
 Modifications to the original third party code is made only to make the code compile as an
@@ -10,9 +10,21 @@ Eclipse C/C++ project.
 I made some bigger changes to the Dogm library. Now you can specify the display type in the
 Dogm constructor, so we now have one binary library code for all display types.
 
-Dirk Grappendorf
-www.grappendorf.net
-info@grappendorf.net
+Use it with Eclipse and the AVR plugin
+---------------------------------------
+
+Get the latest version of my Arduino-Eclipse project from GitHub and import it as an Eclipse project into your workspace directory.
+
+There are some build configurations defined, all with a crystal clock 16 MHz. You can define more build configurations as needed.
+
+Choose for example the atmega168_16000000 configuration and compile the project. You should get a libarduino.a file in the atmega168_16000000 subdirectory.
+
+Standalone usage
+----------------
+
+Since all Makefiles are contained in the project, you can simply cd into an architecture directory and execute make.
+
+After make has finished compiling the files, you will find the libarduino.a library in the architecture directory.
 
 My own libraries
 ----------------
