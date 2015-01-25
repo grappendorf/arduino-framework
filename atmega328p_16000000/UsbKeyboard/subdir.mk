@@ -3,9 +3,6 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
-ASM_SRCS += \
-../UsbKeyboard/usbdrvasm.asm 
-
 C_SRCS += \
 ../UsbKeyboard/oddebug.c \
 ../UsbKeyboard/usbdrv.c 
@@ -13,10 +10,17 @@ C_SRCS += \
 S_UPPER_SRCS += \
 ../UsbKeyboard/usbdrvasm.S 
 
+ASM_SRCS += \
+../UsbKeyboard/usbdrvasm.asm 
+
 OBJS += \
 ./UsbKeyboard/oddebug.o \
 ./UsbKeyboard/usbdrv.o \
 ./UsbKeyboard/usbdrvasm.o 
+
+C_DEPS += \
+./UsbKeyboard/oddebug.d \
+./UsbKeyboard/usbdrv.d 
 
 ASM_DEPS += \
 ./UsbKeyboard/usbdrvasm.d 
@@ -24,16 +28,12 @@ ASM_DEPS += \
 S_UPPER_DEPS += \
 ./UsbKeyboard/usbdrvasm.d 
 
-C_DEPS += \
-./UsbKeyboard/oddebug.d \
-./UsbKeyboard/usbdrv.d 
-
 
 # Each subdirectory must supply rules for building sources it contributes
 UsbKeyboard/%.o: ../UsbKeyboard/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: AVR Compiler'
-	avr-gcc -I"/home/grappendorf/workspace-arduino/arduino-framework" -DARDUINO=100 -Wall -Os -ffunction-sections -fdata-sections -ffunction-sections -fdata-sections  -Wno-strict-aliasing -Wno-unused-function -Wno-unused-variable -Wno-uninitialized -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -c -o "$@" "$<"
+	avr-gcc -I"/home/grappendorf/workspace-arduino/arduino-framework" -DARDUINO=100 -Wall -Os -ffunction-sections -fdata-sections -ffunction-sections -fdata-sections  -Wno-strict-aliasing -Wno-unused-function -Wno-unused-variable -Wno-uninitialized -Wno-unused-but-set-variable -Wno-attributes -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
