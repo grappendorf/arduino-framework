@@ -88,6 +88,9 @@ please send me an email.
   http://code.google.com/p/dogm128/
   LGPL3 
  * EEPROM (Arduino Core)
+ * EEPROMEx
+  http://thijs.elenbaas.net/2012/07/extended-eeprom-library-for-arduino/
+  LGPL
  * Ethernet (Arduino Core)
  * Firmata (Arduino Core)
  * FrequencyTimer2
