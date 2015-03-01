@@ -251,7 +251,7 @@ public:
   int readIntArg ();
   long readLongArg ();
   char readCharArg ();
-  float readFloatArg ();
+//  float readFloatArg ();
   char *readStringArg ();
   void copyStringArg (char *string, uint8_t size);
   uint8_t compareStringArg (char *string);
@@ -272,5 +272,13 @@ public:
   // **** Escaping tools ****
   
   void unescape (char *fromChar);	
+
+  bool sendCmd(int cmdId, bool reqAc = false, int ackCmdId = 1, int timeout = DEFAULT_TIMEOUT) {
+    if (!startCommand) {
+      sendCmdStart (cmdId);
+      return sendCmdEnd (reqAc, ackCmdId, timeout);
+    }
+    return false;
+  }
 };
 #endif

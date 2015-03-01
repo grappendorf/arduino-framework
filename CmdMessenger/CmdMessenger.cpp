@@ -404,16 +404,16 @@ char CmdMessenger::readCharArg()
 /**
  * Read the next argument as float
  */
-float CmdMessenger::readFloatArg()
-{
-    if (next()) {
-        dumped = true;
-		ArgOk  = true;
-        return atof(current);
-    }
-	ArgOk  = false;
-    return 0;
-}
+//float CmdMessenger::readFloatArg()
+//{
+//    if (next()) {
+//        dumped = true;
+//		ArgOk  = true;
+//        return atof(current);
+//    }
+//	ArgOk  = false;
+//    return 0;
+//}
 
 /**
  * Read next argument as string.
