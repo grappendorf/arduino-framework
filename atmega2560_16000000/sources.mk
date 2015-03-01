@@ -35,6 +35,7 @@ XBee \
 Wire/utility \
 Wire \
 WiFlySerial \
+WiFi_Shield \
 WheelEncoder \
 UsbKeyboard \
 UsbHost \
@@ -67,6 +68,7 @@ Fader \
 Ethernet/utility \
 Ethernet \
 EasyVR \
+EEPROMEx \
 EEPROM \
 Dogm/utility \
 Dogm \

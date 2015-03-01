@@ -3,11 +3,11 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
-CPP_SRCS += \
-../Nokia_lcd/Nokia_lcd.cpp 
-
 C_SRCS += \
 ../Nokia_lcd/PCF8833.c 
+
+CPP_SRCS += \
+../Nokia_lcd/Nokia_lcd.cpp 
 
 OBJS += \
 ./Nokia_lcd/Nokia_lcd.o \

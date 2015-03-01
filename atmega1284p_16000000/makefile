@@ -14,6 +14,7 @@ RM := rm -rf
 -include Wire/utility/subdir.mk
 -include Wire/subdir.mk
 -include WiFlySerial/subdir.mk
+-include WiFi_Shield/subdir.mk
 -include WheelEncoder/subdir.mk
 -include UsbKeyboard/subdir.mk
 -include UsbHost/subdir.mk
@@ -46,6 +47,7 @@ RM := rm -rf
 -include Ethernet/utility/subdir.mk
 -include Ethernet/subdir.mk
 -include EasyVR/subdir.mk
+-include EEPROMEx/subdir.mk
 -include EEPROM/subdir.mk
 -include Dogm/utility/subdir.mk
 -include Dogm/subdir.mk

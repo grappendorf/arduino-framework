@@ -3,6 +3,14 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../WInterrupts.c \
+../wiring.c \
+../wiring_analog.c \
+../wiring_digital.c \
+../wiring_pulse.c \
+../wiring_shift.c 
+
 CPP_SRCS += \
 ../CDC.cpp \
 ../HID.cpp \
@@ -16,14 +24,6 @@ CPP_SRCS += \
 ../WString.cpp \
 ../main.cpp \
 ../new.cpp 
-
-C_SRCS += \
-../WInterrupts.c \
-../wiring.c \
-../wiring_analog.c \
-../wiring_digital.c \
-../wiring_pulse.c \
-../wiring_shift.c 
 
 OBJS += \
 ./CDC.o \

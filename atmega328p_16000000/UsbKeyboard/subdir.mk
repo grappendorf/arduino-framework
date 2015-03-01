@@ -3,6 +3,9 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+ASM_SRCS += \
+../UsbKeyboard/usbdrvasm.asm 
+
 C_SRCS += \
 ../UsbKeyboard/oddebug.c \
 ../UsbKeyboard/usbdrv.c 
@@ -10,23 +13,20 @@ C_SRCS += \
 S_UPPER_SRCS += \
 ../UsbKeyboard/usbdrvasm.S 
 
-ASM_SRCS += \
-../UsbKeyboard/usbdrvasm.asm 
-
 OBJS += \
 ./UsbKeyboard/oddebug.o \
 ./UsbKeyboard/usbdrv.o \
 ./UsbKeyboard/usbdrvasm.o 
-
-C_DEPS += \
-./UsbKeyboard/oddebug.d \
-./UsbKeyboard/usbdrv.d 
 
 ASM_DEPS += \
 ./UsbKeyboard/usbdrvasm.d 
 
 S_UPPER_DEPS += \
 ./UsbKeyboard/usbdrvasm.d 
+
+C_DEPS += \
+./UsbKeyboard/oddebug.d \
+./UsbKeyboard/usbdrv.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

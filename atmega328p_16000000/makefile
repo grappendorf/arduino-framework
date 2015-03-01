@@ -14,6 +14,7 @@ RM := rm -rf
 -include Wire/utility/subdir.mk
 -include Wire/subdir.mk
 -include WiFlySerial/subdir.mk
+-include WiFi_Shield/subdir.mk
 -include WheelEncoder/subdir.mk
 -include UsbKeyboard/subdir.mk
 -include UsbHost/subdir.mk
@@ -46,6 +47,7 @@ RM := rm -rf
 -include Ethernet/utility/subdir.mk
 -include Ethernet/subdir.mk
 -include EasyVR/subdir.mk
+-include EEPROMEx/subdir.mk
 -include EEPROM/subdir.mk
 -include Dogm/utility/subdir.mk
 -include Dogm/subdir.mk
@@ -58,32 +60,32 @@ RM := rm -rf
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
-ifneq ($(strip $(C++_DEPS)),)
--include $(C++_DEPS)
-endif
-ifneq ($(strip $(C_DEPS)),)
--include $(C_DEPS)
-endif
-ifneq ($(strip $(ASM_DEPS)),)
--include $(ASM_DEPS)
-endif
 ifneq ($(strip $(CC_DEPS)),)
 -include $(CC_DEPS)
 endif
-ifneq ($(strip $(CPP_DEPS)),)
--include $(CPP_DEPS)
-endif
-ifneq ($(strip $(S_DEPS)),)
--include $(S_DEPS)
-endif
-ifneq ($(strip $(CXX_DEPS)),)
--include $(CXX_DEPS)
+ifneq ($(strip $(C++_DEPS)),)
+-include $(C++_DEPS)
 endif
 ifneq ($(strip $(C_UPPER_DEPS)),)
 -include $(C_UPPER_DEPS)
 endif
+ifneq ($(strip $(CXX_DEPS)),)
+-include $(CXX_DEPS)
+endif
+ifneq ($(strip $(ASM_DEPS)),)
+-include $(ASM_DEPS)
+endif
+ifneq ($(strip $(S_DEPS)),)
+-include $(S_DEPS)
+endif
 ifneq ($(strip $(S_UPPER_DEPS)),)
 -include $(S_UPPER_DEPS)
+endif
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
+endif
+ifneq ($(strip $(CPP_DEPS)),)
+-include $(CPP_DEPS)
 endif
 endif
 
@@ -113,7 +115,7 @@ sizedummy: libarduino.a
 
 # Other Targets
 clean:
-	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(ASM_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(S_DEPS)$(CXX_DEPS)$(C_UPPER_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS) libarduino.a
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(ARCHIVES)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(C_DEPS)$(CPP_DEPS) libarduino.a
 	-@echo ' '
 
 secondary-outputs: $(SIZEDUMMY)
