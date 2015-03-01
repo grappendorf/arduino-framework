@@ -68,6 +68,8 @@ please send me an email.
   You find the license at http://www.gnu.org/licenses/gpl-2.0.html
  * BSD3 The BSD 3-Clause License
   You find the license at http://opensource.org/licenses/BSD-3-Clause
+ * MIT License
+  You find the license at http://opensource.org/licenses/MIT
  * CUSTOM A custom open source/freeware license
   See the source code for the license text 
 
@@ -147,6 +149,9 @@ please send me an email.
  * UsbKeyboard
   http://code.google.com/p/vusb-for-arduino/
   GPL2/GPL3/Commercial
+ * WiFi_Shield
+  http://arduino.cc/en/Reference/WiFi
+  MIT
  * WiFlySerial
   http://arduinowifly.sourceforge.net
   LGPL
