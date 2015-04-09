@@ -2,5 +2,7 @@
 .idea/tasks.xml
 *.sublime-workspace
 package-build/
-**/*.[oda]
+*/*.[oda]
+*/*/*.[oda]
+*/*/*/*.[oda]
 atmega*_*/.gitignore
