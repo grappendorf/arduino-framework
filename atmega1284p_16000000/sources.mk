@@ -50,6 +50,7 @@ SRF02 \
 SPI \
 SD/utility \
 SD \
+RunningAverage \
 RotaryEncoder \
 RealSIDShield \
 PinChangeInt \
@@ -74,6 +75,7 @@ Dogm/utility \
 Dogm \
 DallasTemperature \
 CmdMessenger \
+ClickEncoder \
 CMPS03 \
 Bounce \
 Adafruit_MAX31855 \

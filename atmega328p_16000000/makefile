@@ -29,6 +29,7 @@ RM := rm -rf
 -include SPI/subdir.mk
 -include SD/utility/subdir.mk
 -include SD/subdir.mk
+-include RunningAverage/subdir.mk
 -include RotaryEncoder/subdir.mk
 -include RealSIDShield/subdir.mk
 -include PinChangeInt/subdir.mk
@@ -53,6 +54,7 @@ RM := rm -rf
 -include Dogm/subdir.mk
 -include DallasTemperature/subdir.mk
 -include CmdMessenger/subdir.mk
+-include ClickEncoder/subdir.mk
 -include CMPS03/subdir.mk
 -include Bounce/subdir.mk
 -include Adafruit_MAX31855/subdir.mk
