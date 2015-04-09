@@ -71,7 +71,7 @@ please send me an email.
  * MIT License
   You find the license at http://opensource.org/licenses/MIT
  * CUSTOM A custom open source/freeware license
-  See the source code for the license text 
+  See the library source code for the license text 
 
 ###  Libraries
 
@@ -80,7 +80,10 @@ please send me an email.
   Apache2
  * Bounce 
   http://www.arduino.cc/playground/Code/Bounce  
-  LGPL3 
+  LGPL3
+ * ClickEncoder
+  https://github.com/0xPIT/encoder
+  CUSTOM (MIT style)
  * CmdMessenger
   http://playground.arduino.cc//Code/CmdMessenger  
  * DallasTemperature 
@@ -130,6 +133,9 @@ please send me an email.
   CUSTOM
  * RotaryEncoder
   http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1205879808
+  License unknown, assuming LGPL?
+ * Running Average Library
+  http://playground.arduino.cc/Main/runningAverage
   License unknown, assuming LGPL?
  * SD (Arduino Core)
  * Servo (Arduino Core)
