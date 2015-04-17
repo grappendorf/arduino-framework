@@ -110,6 +110,9 @@ please send me an email.
  * Midi
   http://playground.arduino.cc/Main/MIDILibrary
   GPL3
+ * MultiMap
+  http://playground.arduino.cc/Main/MultiMap
+  License unknown, assuming LGPL?
  * MsTimer2
   http://arduino.cc/playground/Main/MsTimer2
   LGPL
